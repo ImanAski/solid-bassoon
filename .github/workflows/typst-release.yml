@@ -27,7 +27,7 @@ jobs:
           # The main Typst file to compile. Change this if your file has a different name.
           source_file: main.typ
           # The name of the output PDF file.
-          output_file: document.pdf
+          output_file: output/document.pdf
 
       # Step 3: Upload the generated PDF to the release
       - name: Upload PDF to Release
@@ -35,4 +35,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           # The path to the file(s) to upload. This can be a glob pattern.
-          files: document.pdf
+          files: output/document.pdf
