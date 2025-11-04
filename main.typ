@@ -1,12 +1,13 @@
 #import "@preview/icu-datetime:0.2.0" as icu
-#let title = "چشم پزشکی"
+#let title = "لیزرها در چشم‌پزشکی"
 
 #let authors = (
-  (name: "ایمان مختاری اسکی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)", email: "imaaski@gmail.com"),
-  (name: "ولی‌الله درخشانی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)", email: "imaaski@gmail.com"),
-  (name: "آرمیتا حاج حیدری", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)", email: "imaaski@gmail.com"),
-  (name: "شمیم کیانی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)", email: "imaaski@gmail.com"),
-  (name: "نمیا ملک پور", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)", email: "imaaski@gmail.com"),
+  (name: "ایمان مختاری اسکی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)"),
+  (name: "ولی‌الله درخشانی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)"),
+  (name: "آرمیتا حاج حیدری", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)"),
+  (name: "شمیم کیانی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)"),
+  (name: "نمیا ملک پور", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)"),
+  (name: "ابوالفضل طاووسی", affiliation: "دانشگاه آزاد اسلامی (واحد خوراسگان)"),
 )
 #set document(
   title: title,
@@ -15,7 +16,7 @@
 #set page(
   paper: "a4",
   margin: (x: 2cm, y: 2.5cm),
-  numbering: "1",
+  numbering: "۱",
   number-align: center,
 )
 // Date
@@ -32,7 +33,7 @@
 )
 
 // University Logo
-#let university-logo = image("assets/khuisf_logo.png", height: 10cm)
+#let university-logo = image("assets/khuisf_logo.png", height: 11cm)
 
 // Paragragh style
 #set par(
@@ -47,13 +48,13 @@
 #align(center)[
   #university-logo
   // Title
-  #block(text(weight: "bold", size: 16pt, title)) // Larger, bolder title
+  #block(text(weight: "bold", size: 26pt, title)) // Larger, bolder title
   #v(1.5em)
 
   // Authors' Names
   #authors.map(a => {
     // Note: The use of \u200e is the LTR mark to ensure the email is displayed correctly in the footnote.
-    text(size: 11pt, a.name) + footnote( a.email )
+    text(size: 13pt, a.name) // + footnote( a.email )
   }).join("، ") // Use the Persian comma separator
 
   #v(0.8em)
@@ -71,4 +72,15 @@
 
 #pagebreak()
 
+// List
+#outline()
+
+#pagebreak()
+
+
 == چکیده
+
+== نتیجه گیری
+
+== منابع
+#bibliography("main.bib", title: none)
