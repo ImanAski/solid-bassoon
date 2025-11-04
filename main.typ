@@ -40,7 +40,8 @@
   leading: 0.8em,
   first-line-indent: 0.5cm
 )
-#set text(font: "B Nazanin", lang: "fa")
+// #set text(font: "B Nazanin", lang: "fa")
+#set text(font: "Vazirmatn", lang: "fa")
 
 // Centered header
 #align(center)[
